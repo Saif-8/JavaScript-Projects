@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find and Check Strings in Array</title>
+</head>
+<body>
+  <h1>Find Index and Check Unique Strings</h1>
+  
+  <script>
+    // Function to find the index of a string in an array
+    function findStringIndex(arr, search) {
+      return arr.indexOf(search);
+    }
+
+    // Function to find strings that appear only once and push them into a new array
+    function findUniqueStrings(arr) {
+      let uniqueArr = [];
+      let countMap = {};
+
+      // Count occurrences of each string
+      for(let i = 0; i < arr.length; i++) {
+        let str = arr[i];
+        countMap[str] = (countMap[str] || 0) + 1;
+      }
+
+      // Check for strings that appear only once and add to uniqueArr
+      for(let str in countMap) {
+        if(countMap[str] === 1) {
+          uniqueArr.push(str);
+        }
+      }
+
+      return uniqueArr;
+    }
+
+    // Example usage of the functions
+    let words = ["apple", "banana", "cherry", "apple", "date", "banana", "fig"];
+    let search = "cherry";
+    
+    // Find the index of the search string
+    let index = findStringIndex(words, search);
+    console.log("Index of '" + search + "':", index); // Output: Index of 'cherry'
+
+    // Find unique strings
+    let uniqueStrings = findUniqueStrings(words);
+    console.log("Strings that appear only once:", uniqueStrings); // Output: ["cherry", "date", "fig"]
+  </script>
+</body>
+</html>

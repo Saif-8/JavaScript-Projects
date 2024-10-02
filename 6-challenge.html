@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Variables</title>
+</head>
+<body>
+  <!-- Button to add 4 to the cart quantity -->
+  <button onclick="
+    cartQuantity += 4;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    // Check if the cart exceeds the maximum limit
+    if (cartQuantity > cartMax) {
+      alert('The cart is full. Do not update the quantity.');
+      cartQuantity = cartMax;
+    }
+  ">
+    +4
+  </button>
+
+  <!-- Button to add 5 to the cart quantity -->
+  <button onclick="
+    cartQuantity += 5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    // Check if the cart exceeds the maximum limit
+    if (cartQuantity > cartMax) {
+      alert('The cart is full. Do not update the quantity.');
+      cartQuantity = cartMax;
+    }
+  ">
+    +5
+  </button>
+
+  <!-- Button to remove 1 from the cart quantity -->
+  <button onclick="
+    cartQuantity--;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    // Check if the cart quantity goes below 0
+    if (cartQuantity < 0) {
+      alert('Not enough quantity in the cart.');
+      cartQuantity = 0;
+    }
+  ">
+    Remove Quantity
+  </button>
+
+  <!-- Button to remove 2 from the cart quantity -->
+  <button onclick="
+    cartQuantity -= 2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    // Check if the cart quantity goes below 0
+    if (cartQuantity < 0) {
+      alert('Not enough quantity in the cart.');
+      cartQuantity = 0;
+    }
+  ">
+    -2
+  </button>
+
+  <!-- Button to remove 3 from the cart quantity -->
+  <button onclick="
+    cartQuantity -= 3;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    // Check if the cart quantity goes below 0
+    if (cartQuantity < 0) {
+      alert('Not enough quantity in the cart.');
+      cartQuantity = 0;
+    }
+  ">
+    -3
+  </button>
+</body>
+
+<script>
+  // Initialize the name variable and log it
+  let name = 'Umar';
+  console.log(`My name is: ${name}`);
+
+  // Calculate and log the cost of food
+  let cost = 5 + 6 + 9;
+  console.log(`Cost of food: $${cost}`);
+
+  // Calculate and log the tax (10%)
+  let tax = cost * 0.1;
+  console.log(`Tax(10%): $${tax}`);
+
+  // Calculate and log the total cost
+  let totalCost = cost + tax;
+  console.log(`Total Cost: $${totalCost}`);
+
+  // Initialize the cart quantity and maximum limit
+  let cartQuantity = 0;
+  const cartMax = 10;
+</script>
+</html>

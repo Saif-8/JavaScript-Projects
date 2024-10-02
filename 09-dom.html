@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM</title>
+</head>
+<body>
+  <!-- Button with no class or id -->
+  <button>hello</button>
+
+  <!-- Button with a class "js-button" -->
+  <button class="js-button">Second Button</button>
+
+  <script>
+    // Logs the innerHTML of the first <button> element to the console
+    console.log(document.querySelector('button').innerHTML);
+
+    // Changes the innerHTML of the first <button> element to "Changed"
+    document.querySelector('button').innerHTML = 'Changed';
+
+    // Selects the button with the class "js-button" and stores it in a variable
+    const buttoElement = document.querySelector('.js-button');
+
+    // Logs the entire button element with the class "js-button" to the console
+    console.log(buttoElement);
+
+    // This block of code is commented out and won't execute
+    /*
+    // Logs the current document's title to the console
+    console.log(document.title);
+
+    // Changes the title of the document to "Changed!"
+    document.title = 'Changed!';
+
+    // Logs the entire body element of the document to the console
+    console.log(document.body);
+
+    // Logs the type of the document body (should be "object")
+    console.log(typeof document.body);
+
+    // Logs the innerHTML of the body element to the console
+    console.log(document.body.innerHTML);
+
+    // Changes the entire innerHTML of the body element to the text "Changed"
+    document.body.innerHTML = 'Changed';
+
+    // Replaces the entire body content with a new button that says "Good Job!"
+    document.body.innerHTML = '<button>Good Job!</button>';
+    */
+
+    // This block is also commented out and won't execute
+    /*
+    // Replaces the entire body content with the text "hello"
+    document.body.innerHTML = 'hello';
+
+    // Changes the document title to "Good Job!"
+    document.title = 'Good Job!';
+    */
+  </script>
+</body>
+</html>

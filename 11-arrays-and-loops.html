@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loops in JavaScript</title>
+</head>
+<body>
+  <h1>JavaScript Loops</h1>
+  
+  <script>
+    /*
+    // 1. Creating an Array
+    let fruits = ["Apple", "Banana", "Mango"];
+    console.log("Original Array:", fruits); // Output: ["Apple", "Banana", "Mango"]
+
+    // 2. Accessing Array Elements
+    console.log("First Element:", fruits[0]); // Output: "Apple"
+    console.log("Second Element:", fruits[1]); // Output: "Banana"
+
+    // 3. Modifying Array Elements
+    fruits[2] = "Orange";
+    console.log("Modified Array:", fruits); // Output: ["Apple", "Banana", "Orange"]
+
+    // 4. Adding Elements to an Array
+    fruits.push("Grapes");
+    console.log("Array after push:", fruits); // Output: ["Apple", "Banana", "Orange", "Grapes"]
+
+    // 5. Removing Elements from an Array
+    fruits.pop(); // Removes the last element
+    console.log("Array after pop:", fruits); // Output: ["Apple", "Banana", "Orange"]
+
+    fruits.shift(); // Removes the first element
+    console.log("Array after shift:", fruits); // Output: ["Banana", "Orange"]
+
+    // 6. Adding Elements to the Beginning of an Array
+    fruits.unshift("Strawberry");
+    console.log("Array after unshift:", fruits); // Output: ["Strawberry", "Banana", "Orange"]
+
+    // 7. Finding the Length of an Array
+    console.log("Array Length:", fruits.length); // Output: 3
+
+    // 8. Looping Through an Array
+    console.log("Looping through the array:");
+    for(let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+
+    // 9. Array Methods: indexOf
+    console.log("Index of 'Banana':", fruits.indexOf("Banana")); // Output: 1
+
+    // 10. Array Methods: slice
+    let citrus = fruits.slice(1, 2);
+    console.log("Slice of array:", citrus); // Output: ["Banana"]
+
+    // 11. Array Methods: concat
+    let moreFruits = fruits.concat(["Pineapple", "Watermelon"]);
+    console.log("Concatenated Array:", moreFruits); // Output: ["Strawberry", "Banana", "Orange", "Pineapple", "Watermelon"]
+
+    // 12. Array Methods: join
+    let fruitsString = fruits.join(", ");
+    console.log("Array as a String:", fruitsString); // Output: "Strawberry, Banana, Orange"
+
+    // 13. Array Methods: reverse
+    fruits.reverse();
+    console.log("Reversed Array:", fruits); // Output: ["Orange", "Banana", "Strawberry"]
+
+    // 14. Array Methods: sort
+    fruits.sort();
+    console.log("Sorted Array:", fruits); // Output: ["Banana", "Orange", "Strawberry"]
+    */
+
+    // Example of a 'for' loop
+    // The 'for' loop is used when you know how many times you want to loop through the code block.
+    /*
+    console.log("For Loop Example:");
+    for(let i = 0; i < 5; i++) {
+      // The loop starts with i = 0 and runs until i is less than 5.
+      // In each iteration, it prints the current value of i and then increments i by 1.
+      console.log("Iteration:", i);
+    }
+
+    // Example of a 'while' loop
+    // The 'while' loop is used when you want to loop through a code block as long as a specified condition is true.
+    console.log("While Loop Example:");
+    let count = 0;
+    while(count < 5) {
+      // The loop checks if count is less than 5.
+      // If true, it prints the current value of count and then increments count by 1.
+      console.log("Count:", count);
+      count++;
+    }
+      */
+    // Example of a 'for' loop with 'break'
+    console.log("For Loop with 'break' Example:");
+    for(let i = 0; i < 10; i++) {
+      if(i === 5) {
+        // The loop will break when i is equal to 5, stopping further execution of the loop.
+        console.log("Breaking at iteration:", i);
+        break;
+      }
+      console.log("Iteration:", i);
+    }
+
+    // Example of a 'for' loop with 'continue'
+    console.log("For Loop with 'continue' Example:");
+    for(let i = 0; i < 10; i++) {
+      if(i === 5) {
+        // The loop will skip the current iteration when i is equal to 5 and continue with the next iteration.
+        console.log("Skipping iteration:", i);
+        continue;
+      }
+      console.log("Iteration:", i);
+    }
+
+    // Example of a function returning a value inside a loop
+    console.log("Function with 'return' inside Loop Example:");
+    function findNumber(arr, target) {
+      for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === target) {
+          // The function will return the index of the target when found, exiting the loop and the function.
+          return `Found ${target} at index ${i}`;
+        }
+      }
+      return `${target} not found`;
+    }
+
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    console.log(findNumber(numbers, 5)); // Output: Found 5 at index 4
+    console.log(findNumber(numbers, 10)); // Output: 10 not found
+  </script>
+  </script>
+</body>
+</html>

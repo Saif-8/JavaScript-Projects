@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objects</title>
+</head>
+<body>
+
+  <script>
+    /*
+    // Creating an object `product` with two properties: `name` and `price`
+    const product = {
+      name : 'socks',
+      price : 1090
+    };
+
+    // Checking the type of `product`, which is "object"
+    console.log(typeof product);
+
+    // Logging the properties `name` and `price`
+    console.log(product.name);
+    console.log(product.price);
+
+    // Updating the `name` property and logging the updated object
+    product.name = 'cotton socks';
+    console.log(product);
+
+    // Adding a new property `newProperty` to the object and logging it
+    product.newProperty = true;
+    console.log(product);
+
+    // Deleting the newly added property and logging the object again
+    delete product.newProperty;
+    console.log(product);
+    */
+    
+    /*
+    // Creating a more complex object `product2` with nested objects and a method
+    const product2 = {
+      name: 'shirt',
+      'delivery-time': '1-day',
+      rating: {
+        stars: 4.5,
+        count: 87
+      },
+      fun: function function1() {
+        console.log('Function inside object.');
+      }
+    };
+
+    // Logging the entire `product2` object
+    console.log(product2);
+
+    // Accessing object properties using dot notation and bracket notation
+    console.log(product2.name);
+    console.log(product2['name']);
+    console.log(product2['delivery-time']);
+
+    // Accessing a nested object's property and calling the method inside the object
+    console.log(product2.rating.count);
+    product2.fun();
+
+    // Checking the type of `console.log`, which is a function
+    console.log(typeof console.log);
+
+    // Converting the object to a JSON string
+    console.log(JSON.stringify(product2));
+
+    // Parsing the JSON string back into a JavaScript object
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
+    */
+
+    // Getting the length of the string 'Hello'
+    console.log('Hello'.length);
+
+    // Trying to convert the string to uppercase (note: missing parentheses `()`)
+    console.log('Hello'.toUpperCase);
+
+    // Creating an object `object1` and assigning it to `object2`
+    const object1 = {
+      message: 'Hello'
+    };
+    const object2 = object1;
+
+    // Modifying `object1.message` also changes `object2.message` because they reference the same object
+    object1.message = 'Good Job';
+    console.log(object1);
+    console.log(object2);
+
+    // Creating a new object `object3` and comparing it to `object1`
+    const object3 = {
+      message: 'Good Job!'
+    };
+
+    // Comparing two different objects; this returns `false`
+    console.log(object3 === object1);
+
+    // Comparing two references to the same object; this returns `true`
+    console.log(object1 === object2);
+
+    // Creating an object `object4` with multiple properties
+    const object4 = {
+      message: 'Good Job!',
+      price: 799
+    };
+
+    // Using object destructuring to extract `message` and `price` from `object4`
+    // const message = object4.message;
+    const {message, price} = object4;
+    console.log(message);
+    console.log(price);
+
+    // Creating an object `object5` with shorthand property names and a method
+    const object5 = {
+      // message: message,
+      message,
+      // Using shorthand method definition inside an object
+      // method: function function1() {
+      //   console.log('method');
+      // }
+      method() {
+        console.log('method');
+      }
+    };
+
+    // Logging the `object5` and calling its method
+    console.log(object5);
+    object5.method();
+  </script>
+</body>
+</html>

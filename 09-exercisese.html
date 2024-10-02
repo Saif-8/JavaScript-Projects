@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <!-- Display a simple calculator -->
+    <p>Calculator</p>
+    <p>
+      <!-- Button for digit 1 -->
+      <button onclick="updateCalculation('1');">1</button>
+
+      <!-- Button for digit 2 -->
+      <button onclick="updateCalculation('2');">2</button>
+
+      <!-- Button for digit 3 -->
+      <button onclick="updateCalculation('3');">3</button>
+
+      <!-- Button for addition operator -->
+      <button onclick="updateCalculation(' + ');">+</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 4 -->
+      <button onclick="updateCalculation('4');">4</button>
+
+      <!-- Button for digit 5 -->
+      <button onclick="updateCalculation('5');">5</button>
+
+      <!-- Button for digit 6 -->
+      <button onclick="updateCalculation('6');">6</button>
+
+      <!-- Button for subtraction operator -->
+      <button onclick="updateCalculation(' - ');">-</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 7 -->
+      <button onclick="updateCalculation('7');">7</button>
+
+      <!-- Button for digit 8 -->
+      <button onclick="updateCalculation('8');">8</button>
+
+      <!-- Button for digit 9 -->
+      <button onclick="updateCalculation('9');">9</button>
+
+      <!-- Button for multiplication operator -->
+      <button onclick="updateCalculation(' * ');">*</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 0 -->
+      <button onclick="updateCalculation('0');">0</button>
+
+      <!-- Button for decimal point -->
+      <button onclick="updateCalculation('.');">.</button>
+
+      <!-- Button to evaluate the expression -->
+      <button onclick="evaluateCalculation();">=</button>
+
+      <!-- Button for division operator -->
+      <button onclick="updateCalculation(' / ');">/</button>
+    </p>
+
+    <!-- Button to clear the calculation -->
+    <button onclick="clearCalculation();">Clear</button>
+
+    <!-- Paragraph to display the calculation -->
+    <p id="calculation-display"></p>
+
+    <script>
+      // Retrieve the saved calculation from localStorage, or set a default value if not present
+      let calculation = localStorage.getItem('calculation') || '';
+
+      // Function to update the calculation string based on button clicks
+      function updateCalculation(button) {
+        calculation += button;
+        updateDisplay();
+        localStorage.setItem('calculation', calculation);  // Save the updated calculation to localStorage
+      }
+
+      // Function to evaluate the calculation
+      function evaluateCalculation() {
+        try {
+          calculation = eval(calculation).toString();  // Evaluate the expression and convert to string
+        } catch (e) {
+          calculation = 'Error';  // If there is an error in evaluation
+        }
+        updateDisplay();
+        localStorage.setItem('calculation', calculation);  // Save the result to localStorage
+      }
+
+      // Function to clear the calculation
+      function clearCalculation() {
+        calculation = '';
+        updateDisplay();
+        localStorage.setItem('calculation', calculation);  // Save the cleared calculation to localStorage
+      }
+
+      // Function to update the display with the current calculation
+      function updateDisplay() {
+        document.getElementById('calculation-display').textContent = calculation;
+      }
+
+      // Display the saved calculation on page load
+      updateDisplay();
+    </script>
+  </body>
+</html>

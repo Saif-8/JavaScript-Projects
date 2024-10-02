@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#todoInput,
+#dueDateInput {
+  font-size: 15px;
+  padding: 5px;
+  
+}
+
+li {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.deleteButton {
+  background-color: darkred;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+#addButton {
+  background-color: green;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+#addButton:hover {
+  opacity: 0.9;
+}
+
+#todoList {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.deleteButton {
+  background-color: darkred;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.deleteButton:hover {
+  opacity: 0.9;
+}
+
+input[type="text"],
+input[type="date"] {
+  text-align: center;
+  font-size: 15px;
+}
+
+ul {
+  padding: 0;
+}

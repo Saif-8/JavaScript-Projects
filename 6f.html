@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+
+  <body>
+  </body>
+
+  <script>
+    // Generate a random number between 0 and 1
+    let numberRandom = Math.random();
+    
+    // Initialize the result variable
+    let result = '';
+    
+    // Set the guess to 'Tails'
+    const guess = 'Tails';
+
+    /*
+    // Determine result based on the random number
+    if (numberRandom < 0.5) {
+      result = 'Heads';
+    } else {
+      result = 'Tails';
+    }
+
+    // Check if the guess matches the result and log the outcome
+    if (guess === result) {
+      console.log('You Win!');
+    } else {
+      console.log('You Lose!');
+    }
+    */
+
+    // Ternary operator to determine 'Heads' or 'Tails'
+    result = numberRandom < 0.5 ? 'Heads' : 'Tails';
+
+    // Check the guess against the result and log the outcome using ternary operator
+    guess === result ? console.log('You Win') : console.log('You Lose');
+  </script>
+
+</html>

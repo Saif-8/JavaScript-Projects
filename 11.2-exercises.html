@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search String in Array</title>
+</head>
+<body>
+  <h1>Arrays & Loop Exercices</h1>
+  
+  <script>
+    /*
+    // Creating an array of strings
+    let words = ["apple", "banana", "cherry", "date", "fig", "cherry", "grape"];
+
+    // String to search for
+    let search = "cherry";
+
+    // Initialize a variable to store the index
+    let index = -1;
+
+    // Loop through the array to find the search string
+    for(let i = 0; i < words.length; i++) {
+      if(words[i] === search) {
+        index = i;
+        break; // Exit the loop once the string is found
+      }
+    }
+
+    // Log the result
+    console.log(index); // Output: Index of search string or -1 if not found
+    */
+   /*
+   // Function to search for a string in an array
+   function findStringIndex(arr, search) {
+      // Initialize a variable to store the index
+      let index = -1;
+
+      // Loop through the array to find the search string
+      for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === search) {
+          index = i;
+          break; // Exit the loop once the string is found
+        }
+      }
+
+      // Return the result
+      return index; // Returns the index of the search string or -1 if not found
+    }
+
+    // Example usage of the function
+    let words = ["apple", "banana", "banana", "date", "fig", "grape"];
+    let search = "cherry";
+    let result = findStringIndex(words, search);
+
+    // Log the result
+    console.log(result); // Output: Index of search string or -1 if not found
+    */
+   /*
+    // Function to skip a specified string in an array
+    function skipStringInArray(arr, skip) {
+      for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === skip) {
+          continue; // Skip the current iteration if the string matches the skip string
+        }
+        console.log(arr[i]); // Log the current string if it's not skipped
+      }
+    }
+
+    // Example usage of the function
+    let words = ["apple", "banana", "cherry", "date", "fig", "grape"];
+    let skip = "date";
+    
+    // Call the function to skip the specified string
+    skipStringInArray(words, skip);
+    */
+   /*
+   // Function to skip the first two occurrences of a specified string in an array
+   function skipFirstTwoStringsInArray(arr, skip) {
+      let skipCount = 0; // Counter for the number of times the string is skipped
+
+      for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === skip && skipCount < 2) {
+          skipCount++; // Increment the skip counter
+          continue; // Skip the current iteration if the string matches and skipCount is less than 2
+        }
+        console.log(arr[i]); // Log the current string if it's not skipped
+      }
+    }
+
+    // Example usage of the function
+    let words = ["apple", "banana", "cherry", "date", "banana", "fig", "banana", "grape"];
+    let skip = "banana";
+    
+    // Call the function to skip the first two occurrences of the specified string
+    skipFirstTwoStringsInArray(words, skip);
+    */
+   /*
+   // Function to remove the last two occurrences of a specified string in an array
+   function removeLastTwoStringsInArray(arr, remove) {
+      let removeCount = 0; // Counter for the number of times the string is removed
+
+      // Reverse the array to start from the last occurrence
+      let reversedArr = arr.reverse();
+
+      // Create a new array to hold the result
+      let resultArr = [];
+
+      for(let i = 0; i < reversedArr.length; i++) {
+        if(reversedArr[i] === remove && removeCount < 2) {
+          removeCount++; // Increment the remove counter
+          continue; // Skip the current iteration if the string matches and removeCount is less than 2
+        }
+        resultArr.push(reversedArr[i]); // Add the current string to the result array if it's not removed
+      }
+
+      // Reverse the result array to restore the original order
+      resultArr.reverse();
+
+      // Log the final array
+      console.log(resultArr);
+    }
+
+    // Example usage of the function
+    let words = ["apple", "banana", "cherry", "banana", "fig", "banana", "grape"];
+    let remove = "banana";
+    
+    // Call the function to remove the last two occurrences of the specified string
+    removeLastTwoStringsInArray(words, remove);
+    */
+   // Function to remove the last two occurrences of a specified string in an array
+   function removeLastTwoStringsInArray(arr, remove) {
+      // Create a new array that is a slice of the original array
+      let newArr = arr.slice();
+      
+      // Reverse the new array to start from the last occurrence
+      newArr.reverse();
+      
+      let removeCount = 0; // Counter for the number of times the string is removed
+      
+      // Create a new array to hold the result
+      let resultArr = [];
+
+      for(let i = 0; i < newArr.length; i++) {
+        if(newArr[i] === remove && removeCount < 2) {
+          removeCount++; // Increment the remove counter
+          continue; // Skip the current iteration if the string matches and removeCount is less than 2
+        }
+        resultArr.push(newArr[i]); // Add the current string to the result array if it's not removed
+      }
+
+      // Reverse the result array to restore the original order
+      resultArr.reverse();
+      
+      // Log the final array
+      console.log("Original Array:", arr);
+      console.log("Modified Array:", resultArr);
+    }
+
+    // Example usage of the function
+    let words = ["apple", "banana", "cherry", "banana", "fig", "banana", "grape"];
+    let remove = "banana";
+    
+    // Call the function to remove the last two occurrences of the specified string
+    removeLastTwoStringsInArray(words, remove);
+  </script>
+</body>
+</html>

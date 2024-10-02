@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Functions</title>
+</head>
+<body>
+  <h1>Advanced JavaScript Functions</h1>
+
+  <h2>Function as a Variable</h2>
+  <p id="funcAsVar"></p>
+  
+  <h2>Function as a Method</h2>
+  <p id="funcAsMethod"></p>
+
+  <h2>Function Parameters</h2>
+  <p id="funcParams"></p>
+
+  <h2>Function Passed as a Parameter (Higher-Order Function)</h2>
+  <p id="funcAsParam"></p>
+
+  <h2>Using setTimeout</h2>
+  <p id="setTimeoutExample"></p>
+
+  <h2>Using setInterval</h2>
+  <p id="setIntervalExample"></p>
+
+  <h2>forEach Function Example</h2>
+  <p id="forEachExample"></p>
+
+  <h2>Continue Statement with Return Example</h2>
+  <p id="continueExample"></p>
+
+  <script>
+    // Function as a Variable
+    let greet = function(name) {
+      return `Hello, ${name}!`;
+    };
+    document.getElementById("funcAsVar").innerText = greet("Alice");
+
+    // Function as a Method
+    let person = {
+      name: "Bob",
+      sayHello: function() {
+        return `Hello, my name is ${this.name}`;
+      }
+    };
+    document.getElementById("funcAsMethod").innerText = person.sayHello();
+
+    // Function Parameters
+    function addNumbers(a, b) {
+      return a + b;
+    }
+    document.getElementById("funcParams").innerText = `Sum: ${addNumbers(5, 10)}`;
+
+    // Function Passed as a Parameter (Higher-Order Function)
+    function executeFunction(fn, value) {
+      return fn(value);
+    }
+
+    function shout(name) {
+      return name.toUpperCase() + "!!!";
+    }
+
+    document.getElementById("funcAsParam").innerText = executeFunction(shout, "JavaScript");
+
+    // Using setTimeout
+    setTimeout(function() {
+      document.getElementById("setTimeoutExample").innerText = "This message appears after 3 seconds!";
+    }, 3000);
+
+    // Using setInterval
+    let count = 0;
+    let intervalId = setInterval(function() {
+      count++;
+      document.getElementById("setIntervalExample").innerText = `Counter: ${count}`;
+      if (count === 5) {
+        clearInterval(intervalId);
+        document.getElementById("setIntervalExample").innerText += " (Stopped)";
+      }
+    }, 1000);
+
+    // forEach Function Example
+    let numbers = [1, 2, 3, 4, 5];
+    let sum = 0;
+    numbers.forEach(function(number) {
+      sum += number;
+    });
+    document.getElementById("forEachExample").innerText = `Sum of array [${numbers.join(', ')}] using forEach: ${sum}`;
+
+    // Continue Statement with Return Example
+    function processArray(arr) {
+      let result = [];
+      arr.forEach(function(number) {
+        if (number % 2 === 0) {
+          return; // Skip even numbers (similar to continue)
+        }
+        result.push(number * 2); // Process odd numbers
+      });
+      return result;
+    }
+
+    let processedArray = processArray([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    document.getElementById("continueExample").innerText = `Processed array (skipping evens and doubling odds): [${processedArray.join(', ')}]`;
+  </script>
+</body>
+</html>

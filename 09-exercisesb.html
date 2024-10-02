@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Projects</title>
+</head>
+<body>
+  <!-- Subscribe Section -->
+  <p>Youtube Subscribe Button</p>
+  <button onclick="subscribe();" class="js-subscribe-button">Subscribe</button>
+
+  <!-- Amazon Calculator Section -->
+  <h2>Amazon Calculator</h2>
+  
+  <!-- Paragraphs displaying shipping information -->
+  <p>If the cost is above $40, add $10 for shipping.</p>
+  <p>If the cost is below $40, free shipping applies.</p>
+  
+  <!-- Input field for cost of order -->
+  <input id="cost-input" type="number" placeholder="Cost of Order" />
+
+  <!-- Calculate Button -->
+  <button onclick="calculateShipping();" id="calculate-button">Calculate</button>
+
+  <!-- Paragraph to display the calculated total -->
+  <p id="calculated-total"></p>
+
+  <script>
+    // Subscribe button functionality
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe-button');
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    }
+
+    // Function to calculate shipping cost
+    function calculateShipping() {
+      const costInput = document.getElementById('cost-input').value;
+      const cost = parseFloat(costInput);
+      let totalCost;
+
+      if (cost >= 40) {
+        totalCost = cost; // Free shipping for orders $40 and above
+      } else {
+        totalCost = cost + 10; // Add $10 for shipping for orders below $40
+      }
+
+      // Display the calculated total with a dollar sign and rounded to 2 decimal places
+      document.getElementById('calculated-total').textContent = `Total Cost: $${totalCost.toFixed(2)}`;
+    }
+
+    // Keydown event to calculate when pressing Enter
+    document.getElementById('cost-input').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        calculateShipping();
+      }
+    });
+  </script>
+</body>
+</html>

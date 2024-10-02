@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+
+  <body>
+    <!-- Button to add 4 items to the cart -->
+    <button onclick="
+      cartQuantity += 4; // Increase the cart quantity by 4
+      console.log(`Cart Quantity: ${cartQuantity}`); // Log the updated cart quantity
+    ">
+      +4
+    </button>
+
+    <!-- Button to add 5 items to the cart -->
+    <button onclick="
+      cartQuantity += 5; // Increase the cart quantity by 5
+      console.log(`Cart Quantity: ${cartQuantity}`); // Log the updated cart quantity
+    ">
+      +5
+    </button>
+
+    <!-- Button to remove 1 item from the cart -->
+    <button onclick="
+      cartQuantity--; // Decrease the cart quantity by 1
+      console.log(`Cart Quantity: ${cartQuantity}`); // Log the updated cart quantity
+    ">
+      Remove Quantity
+    </button>
+
+    <!-- Button to remove 2 items from the cart -->
+    <button onclick="
+      cartQuantity -= 2; // Decrease the cart quantity by 2
+      console.log(`Cart Quantity: ${cartQuantity}`); // Log the updated cart quantity
+    ">
+      -2
+    </button>
+
+    <!-- Button to remove 3 items from the cart -->
+    <button onclick="
+      cartQuantity -= 3; // Decrease the cart quantity by 3
+      console.log(`Cart Quantity: ${cartQuantity}`); // Log the updated cart quantity
+    ">
+      -3
+    </button>
+  </body>
+
+  <script>
+    // Initialize the name and log it to the console
+    let name = 'Umar';
+    console.log(`My name is: ${name}`);
+
+    // Calculate and log the cost of food
+    let cost = 5 + 6 + 9;
+    console.log(`Cost of food: $${cost}`);
+
+    // Calculate and log the tax (10% of the cost)
+    let tax = cost * 0.1;
+    console.log(`Tax (10%): $${tax}`);
+
+    // Calculate and log the total cost including tax
+    let totalCost = cost + tax;
+    console.log(`Total Cost: $${totalCost}`);
+
+    // Initialize the cart quantity to 0
+    let cartQuantity = 0;
+  </script>
+</html>

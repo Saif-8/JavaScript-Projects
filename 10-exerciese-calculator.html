@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles/10-calculator.css">
+  </head>
+  <body>
+    <!-- Display the current calculation -->
+    <div id="display"></div>
+    
+    <!-- Display a simple calculator -->
+    <p>
+      <!-- Button for digit 1 -->
+      <button onclick="addToCalculation('1')">1</button>
+      <!-- Button for digit 2 -->
+      <button onclick="addToCalculation('2')">2</button>
+      <!-- Button for digit 3 -->
+      <button onclick="addToCalculation('3')">3</button>
+      <!-- Button for addition operator -->
+      <button onclick="addToCalculation(' + ')" class="add">+</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 4 -->
+      <button onclick="addToCalculation('4')">4</button>
+      <!-- Button for digit 5 -->
+      <button onclick="addToCalculation('5')">5</button>
+      <!-- Button for digit 6 -->
+      <button onclick="addToCalculation('6')">6</button>
+      <!-- Button for subtraction operator -->
+      <button onclick="addToCalculation(' - ')" class="add">-</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 7 -->
+      <button onclick="addToCalculation('7')">7</button>
+      <!-- Button for digit 8 -->
+      <button onclick="addToCalculation('8')">8</button>
+      <!-- Button for digit 9 -->
+      <button onclick="addToCalculation('9')">9</button>
+      <!-- Button for multiplication operator -->
+      <button onclick="addToCalculation(' * ')" class="add">*</button>
+    </p>
+
+    <p>
+      <!-- Button for digit 0 -->
+      <button onclick="addToCalculation('0')">0</button>
+      <!-- Button for decimal point -->
+      <button onclick="addToCalculation('.')">.</button>
+      <!-- Button to evaluate the expression -->
+      <button onclick="calculateResult()" class="add">=</button>
+      <!-- Button for division operator -->
+      <button onclick="addToCalculation(' / ')" class="add">/</button>
+    </p>
+
+    <!-- Button to clear the calculation -->
+    <button onclick="clearCalculation()" class="clear-button">Clear</button>
+
+    <script src="scripts/10-calculator.js"></script>
+  </body>
+</html>

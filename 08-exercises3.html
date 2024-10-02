@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coin Toss Game</title>
+  </head>
+
+  <body>
+    <!-- Buttons for choosing Heads or Tails -->
+    <button onclick="playGame('Heads');">Heads</button>
+    <button onclick="playGame('Tails');">Tails</button>
+
+    <p id="scoreDisplay"></p> <!-- Placeholder for displaying the score -->
+
+    <script>
+      // Retrieve the score from localStorage or initialize it if not present
+      let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, losses: 0 };
+
+      // Function to update and display the score
+      function updateScore() {
+        // Store the updated score in localStorage
+        localStorage.setItem('score', JSON.stringify(score));
+
+        // Display the current score in the console and on the page
+        console.log(`Wins: ${score.wins}, Losses: ${score.losses}`);
+        document.getElementById('scoreDisplay').textContent = `Wins: ${score.wins}, Losses: ${score.losses}`;
+      }
+
+      // Initialize the score display when the page loads
+      updateScore();
+
+      // Function to play the game
+      function playGame(guess) {
+        // Generate a random number between 0 and 1
+        let numberRandom = Math.random();
+        
+        // Determine 'Heads' or 'Tails' based on the random number
+        let result = numberRandom < 0.5 ? 'Heads' : 'Tails';
+
+        // Check the guess against the result and update the score
+        if (guess === result) {
+          console.log('You Win!');
+          score.wins += 1;
+        } else {
+          console.log('You Lose!');
+          score.losses += 1;
+        }
+
+        // Update the score display
+        updateScore();
+      }
+    </script>
+  </body>
+</html>

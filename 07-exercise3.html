@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+
+  <body>
+    <!-- Button to add 4 to the cart quantity -->
+    <button onclick="updateCartQuantity(4);">+4</button>
+
+    <!-- Button to add 5 to the cart quantity -->
+    <button onclick="updateCartQuantity(5);">+5</button>
+
+    <!-- Button to remove 1 from the cart quantity -->
+    <button onclick="updateCartQuantity(-1);">Remove Quantity</button>
+
+    <!-- Button to remove 2 from the cart quantity -->
+    <button onclick="updateCartQuantity(-2);">-2</button>
+
+    <!-- Button to remove 3 from the cart quantity -->
+    <button onclick="updateCartQuantity(-3);">-3</button>
+  </body>
+
+  <script>
+    // Define the name variable and log it
+    let name = 'Umar';
+    console.log(`My name is: ${name}`);
+
+    // Calculate and log the cost of food
+    let cost = 5 + 6 + 9;
+    console.log(`Cost of food: $${cost}`);
+
+    // Calculate and log the tax (10%)
+    let tax = cost * 0.1;
+    console.log(`Tax(10%): $${tax}`);
+
+    // Calculate and log the total cost
+    let totalCost = cost + tax;
+    console.log(`Total Cost: $${totalCost}`);
+
+    // Initialize the cart quantity
+    let cartQuantity = 0;
+
+    // Function to update the cart quantity
+    function updateCartQuantity(amount) {
+      if (cartQuantity > 10 || cartQuantity < 0) {
+        // Alert the user if the cart quantity is out of bounds
+        alert('The Cart is full.');
+        return;
+      } else {
+        // Update the cart quantity and log it
+        cartQuantity += amount;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    }
+  </script>
+</html>

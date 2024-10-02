@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+
+  <body>
+    <!-- Display the current cart quantity -->
+    <p>Cart Quantity: <span id="cart-quantity">0</span></p>
+
+    <!-- Buttons to modify the cart quantity -->
+    <button onclick="updateCartQuantity(4);">+4</button>
+    <button onclick="updateCartQuantity(5);">+5</button>
+    <button onclick="updateCartQuantity(-1);">Remove Quantity</button>
+    <button onclick="updateCartQuantity(-2);">-2</button>
+    <button onclick="updateCartQuantity(-3);">-3</button>
+
+    <script>
+      // Initialize the cart quantity
+      let cartQuantity = 0;
+
+      // Function to update the cart quantity
+      function updateCartQuantity(amount) {
+        // Update the cart quantity
+        cartQuantity += amount;
+
+        // Ensure the cart quantity does not go below 0
+        if (cartQuantity < 0) {
+          cartQuantity = 0;
+        }
+
+        // Display the updated cart quantity in the DOM
+        document.getElementById('cart-quantity').textContent = cartQuantity;
+
+        // Optional: Log the cart quantity for debugging
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    </script>
+  </body>
+</html>

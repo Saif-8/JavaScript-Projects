@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Functions Practice</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    const multipyArrow = (a, b) => a * b;
+    console.log(multipyArrow(2, 3));
+    */
+   /*
+    const numbers = [1, 2, -3, 4, 5];
+    let newNumbers = [];
+
+    numbers.forEach(num => {
+      if (num >= 0) {
+        newNumbers.push(num); // Add the number to the array
+      } else {
+        return false; // This doesn't affect the loop but indicates that a negative number was found
+      }
+    });
+
+    console.log(newNumbers); // Output: [1, 2, 4, 5]
+    */
+   /*
+    const numbers = [1, 2, -3, 4, 5];
+    const doubledNumbers = numbers.map(num => num * 2);
+    console.log(doubledNumbers); 
+    */
+    const stringsArray = ['egg', 'apple', 'egg', 'egg', 'banana'];
+    let eggCount = 0;
+
+    const newStrings = stringsArray.filter(str => {
+      if (str === 'egg') {
+        if (eggCount < 2) {
+          eggCount++; // Increment the count for each 'egg' removed
+          return false; // Skip this 'egg'
+        }
+      }
+      return true; // Keep the element if it's not 'egg' or if 2 'eggs' have already been removed
+    });
+
+    console.log(newStrings); // Output: ['apple', 'egg', 'banana']
+ 
+  </script>
+</body>
+</html>

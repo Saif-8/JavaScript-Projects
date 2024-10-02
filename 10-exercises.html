@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML CSS JS</title>
+  <style>
+    /* Button base style */
+    .toggle-button {
+      background-color: lightgray;
+      color: black;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    /* Active button style */
+    .active {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Buttons -->
+  <button class="toggle-button" onclick="toggleButton(this);">Button 1</button>
+  <button class="toggle-button" onclick="toggleButton(this);">Button 2</button>
+  <button class="toggle-button" onclick="toggleButton(this);">Button 3</button>
+
+  <script>
+    // Function to toggle the button style, ensuring only one button is active at a time
+    function toggleButton(button) {
+      // Get all buttons with the class 'toggle-button'
+      const buttons = document.querySelectorAll('.toggle-button');
+      
+      // Remove the 'active' class from all buttons
+      buttons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      
+      // Add the 'active' class to the clicked button
+      button.classList.add('active');
+    }
+  </script>
+  
+</body>
+</html>

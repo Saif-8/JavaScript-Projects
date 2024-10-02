@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <!-- Display a simple calculator -->
+    <p>Calculator</p>
+    <p>
+      <!-- Button for digit 1 -->
+      <button onclick="
+      calculation += '1';
+      console.log(calculation);">
+      1
+    </button>
+
+      <!-- Button for digit 2 -->
+    <button onclick="
+      calculation += '2';
+      console.log(calculation);">
+      2
+    </button>
+
+      <!-- Button for digit 3 -->
+    <button onclick="
+      calculation += '3';
+      console.log(calculation);">
+      3
+    </button>
+
+      <!-- Button for addition operator -->
+    <button onclick="
+      calculation += ' + ';
+      console.log(calculation);">
+      +
+    </button>
+    </p>
+
+    <p>
+      <!-- Button for digit 4 -->
+      <button onclick="
+      calculation += '4';
+      console.log(calculation);">
+      4
+    </button>
+
+      <!-- Button for digit 5 -->
+    <button onclick="
+      calculation += '5';
+      console.log(calculation);">
+      5
+    </button>
+
+      <!-- Button for digit 6 -->
+    <button onclick="
+      calculation += '6';
+      console.log(calculation);">
+      6
+    </button>
+
+      <!-- Button for subtraction operator -->
+    <button onclick="
+      calculation += ' - ';
+      console.log(calculation);">
+      -
+    </button>
+    </p>
+
+    <p>
+      <!-- Button for digit 7 -->
+      <button onclick="
+      calculation += '7';
+      console.log(calculation);">
+      7
+    </button>
+
+      <!-- Button for digit 8 -->
+    <button onclick="
+      calculation += '8';
+      console.log(calculation);">
+      8
+    </button>
+
+      <!-- Button for digit 9 -->
+    <button onclick="
+      calculation += '9';
+      console.log(calculation);">
+      9
+    </button>
+
+      <!-- Button for multiplication operator -->
+    <button onclick="
+      calculation += ' * ';
+      console.log(calculation);">
+      *
+    </button>
+    </p>
+
+    <p>
+      <!-- Button for digit 0 -->
+      <button onclick="
+      calculation += '0';
+      console.log(calculation);">
+      0
+    </button>
+
+      <!-- Button for decimal point -->
+    <button onclick="
+      calculation += '.';
+      console.log(calculation);">
+      .
+    </button>
+
+      <!-- Button to evaluate the expression -->
+    <button onclick="
+      calculation = eval(calculation);
+      console.log(calculation);">
+      =
+    </button>
+
+      <!-- Button for division operator -->
+    <button onclick="
+      calculation += ' / ';
+      console.log(calculation);">
+      /
+    </button>
+    </p>
+
+    <!-- Button to clear the calculation (currently does not have functionality) -->
+    <button>Clear</button>
+  </body>
+
+  <script>
+    <!-- Initialize the calculation variable -->
+    let calculation = '';
+  </script>
+</html>

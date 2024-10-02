@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Keyup Example</title>
+</head>
+<body>
+  <!-- Input box with a placeholder -->
+  <input id="user-input" type="text" placeholder="Type something" />
+
+  <!-- Paragraph to display the user input -->
+  <p id="display-text"></p>
+
+  <script>
+    // Add event listener to capture user input on keyup
+    document.getElementById('user-input').addEventListener('keyup', function() {
+      const inputText = this.value; // Get the current value of the input box
+      document.getElementById('display-text').textContent = inputText; // Display it in the paragraph
+    });
+  </script>
+</body>
+</html>

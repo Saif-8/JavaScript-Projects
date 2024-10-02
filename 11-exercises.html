@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arrays & Loops Exercises</title>
+</head>
+<body>
+  <h1>Arrays & Loops Exercises</h1>
+  
+  <script>
+    let nums = [1,20,22,24,5];
+    // nums[2] = 99;
+    // console.log(nums);
+
+    /*
+    function getLastValue() {
+      const lastIndex = nums[nums.length - 1];
+      return console.log(lastIndex);
+    };
+    getLastValue();
+    */
+   /*
+    function arraySwap(array) {
+      const newArray = array.reverse();
+      return console.log(newArray); 
+    }
+    arraySwap(nums);
+    */
+   /*
+    for (let i = 0; i <= 10; i += 2) {
+      console.log(i);
+    }
+      */
+     /*
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+    }
+    */
+   /*
+    let count = 0;
+    while(count <= 10) {
+      // The loop checks if count is less than 5.
+      // If true, it prints the current value of count and then increments count by 1.
+      console.log("Count:", count);
+      count += 2;
+    };
+    */
+   /*
+   function addAnArray(array) {
+      let newArray = []; // Initialize the new array outside the loop
+      
+      for(let i = 0; i < array.length; i += 1) {
+        newArray.push(array[i] + 1); // Add 1 to the current element and push to newArray
+      }
+      
+      return console.log(newArray); // Return the new array after the loop completes
+   };
+   addAnArray(nums);
+   */
+  /*
+   function addAnArray(array, num) {
+      let newArray = []; // Initialize the new array outside the loop
+      
+      for(let i = 0; i < array.length; i += 1) {
+        newArray.push(array[i] + num); // Add 1 to the current element and push to newArray
+      }
+      
+      return console.log(newArray); // Return the new array after the loop completes
+   };
+   addAnArray(nums, 2);
+   */
+  /*
+   let nums2 = [1,20,22,24,5];
+   function addAnArray(array1, array2) {
+      let newArray = []; // Initialize the new array outside the loop
+      
+      for(let i = 0; i < array1.length; i += 1) {
+        newArray.push(array1[i] + array2[i]); // Add 1 to the current element and push to newArray
+      }
+      
+      return console.log(newArray); // Return the new array after the loop completes
+   };
+   addAnArray(nums, nums2);
+   */   
+  /* 
+   function countGreaterThanZero(array) {
+      let count = 0; // Initialize the counter to 0
+      
+      for(let i = 0; i < array.length; i += 1) {
+        if(array[i] > 0) { // Check if the current element is greater than 0
+          count += 1; // Increment the counter
+        }
+      }
+      
+      return console.log(count); // Return the total count
+    }
+    countGreaterThanZero(nums);
+    */
+   /*
+    function minMax(nums) {
+      if (nums.length === 0) {
+        return {
+          min: null,
+          max: null
+        }; // Handle empty array case
+      }
+
+      let minIndex = 0;
+      let maxIndex = 0;
+
+      for (let i = 1; i < nums.length; i += 1) {
+        if (nums[i] < nums[minIndex]) {
+          minIndex = i; // Update minIndex if a new minimum is found
+        }
+        if (nums[i] > nums[maxIndex]) {
+          maxIndex = i; // Update maxIndex if a new maximum is found
+        }
+      }
+
+      return {
+        min: nums[minIndex], // Return the value of the minimum element
+        max: nums[maxIndex]  // Return the value of the maximum element
+      };
+    }
+    console.log(minMax([])); // Output: { min: null, max: null }
+    console.log(minMax([3])); // Output: { min: 3, max: 3 }
+    console.log(minMax([3, 3, 3, 3])); // Output: { min: 3, max: 3 }
+    console.log(minMax([1, 20, 22, 24, 5])); // Output: { min: 1, max: 24 }
+    */
+    function countStringOccurrences(array) {
+      const countMap = {}; // Object to store the count of each string
+      
+      // Iterate through the array
+      for (const str of array) {
+        if (countMap[str]) {
+          countMap[str] += 1; // Increment the count if the string is already in the object
+        } else {
+          countMap[str] = 1; // Initialize the count if the string is not in the object
+        }
+      }
+      
+      return countMap; // Return the object with the count of each string
+    }
+
+    // Test cases
+    let strings = ["apple", "banana", "apple", "orange", "banana", "apple"];
+    let result = countStringOccurrences(strings);
+    console.log(result); // Output: { apple: 3, banana: 2, orange: 1 }
+
+  </script>
+</body>
+</html>

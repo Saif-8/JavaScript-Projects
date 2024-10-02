@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="message">Advanced Functions</title>
+</head>
+<body>
+  <h1>Advanced JavaScript Functions Exercises</h1>
+  <button class="start" onclick="startTimer()">Start</button>
+  <button class="add" onclick="addToCart()">Add to Cart</button>
+  <p id="add-to-cart"></p>
+  <!-- New Buttons for Counter Management -->
+  <button class="increment" onclick="incrementCounter()">Add</button>
+  <button class="decrement" onclick="decrementCounter()">Remove</button>
+  
+  <p id="add-to-cart"></p>
+  <script>
+    let count = 0;  // Initialize the counter
+    const maxInterval = 2000; // 2 seconds
+
+    function updateMessage() {
+      if (count < 0) {
+        document.getElementById("message").innerText = "App";
+      } else {
+        document.getElementById("message").innerText = `(${count}) New Messages`;
+      }
+    }
+
+    function incrementCounter() {
+      count++;
+      updateMessage();  // Update the title message with the new counter value
+    }
+
+    function decrementCounter() {
+      count--;
+      updateMessage();  // Update the title message with the new counter value
+    }
+
+    function startTimer() {
+      // Clear any previous timeout
+      clearTimeout(timerId);
+
+      // Immediately change the button text to "Loading..."
+      document.querySelector(".start").innerText = "Loading...";
+      
+      // Set a new timeout to change the text to "Finish" after 3 seconds
+      timerId = setTimeout(function() {
+        document.querySelector(".start").innerText = "Finish";
+      }, 3000);
+    }
+
+    function addToCart() {
+      // Clear any previous timeout for the add-to-cart message
+      clearTimeout(cartTimerId);
+
+      document.getElementById("add-to-cart").innerText = "Added";
+
+      // Set a new timeout to clear the message after 3 seconds
+      cartTimerId = setTimeout(function() {
+        document.getElementById("add-to-cart").innerText = "";
+      }, 3000);
+    }
+
+    // Initialize the interval to update the message every 2 seconds
+    let intervalId = setInterval(function() {
+      incrementCounter();
+      if (count < 0) {
+        clearInterval(intervalId);
+      }
+    }, maxInterval);
+  </script>
+</body>
+</html>

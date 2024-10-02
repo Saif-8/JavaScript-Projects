@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced Functions 12.2</title>
+</head>
+<body>
+  <!-- Example using onClick attribute -->
+  <button id="button1" onclick="handleClickOnClick()">Click me (onClick)</button>
+
+  <!-- Example using addEventListener -->
+  <button id="button2">Click me (addEventListener)</button>
+
+  <script>
+    // Arrow Function Syntax
+    // Traditional function expression
+    const addTraditional = function(a, b) {
+        return a + b;
+    };
+
+    // Equivalent arrow function
+    const addArrow = (a, b) => {
+        return a + b;
+    };
+
+    // Simplified arrow function when there is only one statement
+    const addSimplified = (a, b) => a + b;
+
+    console.log(addTraditional(2, 3)); // Output: 5
+    console.log(addArrow(2, 3));       // Output: 5
+    console.log(addSimplified(2, 3));  // Output: 5
+
+    // Example 1: Arrow function with no parameters
+    const greet = () => console.log("Hello, World!");
+    greet(); // Output: Hello, World!
+
+    // Example 2: Arrow function with a single parameter
+    const square = num => num * num;
+    console.log(square(4)); // Output: 16
+
+    // Example 3: Arrow function inside another function (forEach example)
+    const numbers = [1, 2, 3, 4, 5];
+    numbers.forEach(num => console.log(num * 2));
+    // Output: 2, 4, 6, 8, 10
+
+    // Example 4: Arrow functions do not have their own 'this'
+    // Traditional function
+    function PersonTraditional(name) {
+        this.name = name;
+        this.greet = function() {
+            setTimeout(function() {
+                console.log("Hello, " + this.name); // 'this' refers to the global object, not the Person object
+            }, 1000);
+        };
+    }
+
+    // Arrow function
+    function PersonArrow(name) {
+        this.name = name;
+        this.greet = function() {
+            setTimeout(() => {
+                console.log("Hello, " + this.name); // 'this' refers to the Person object
+            }, 1000);
+        };
+    }
+
+    const personTraditional = new PersonTraditional("Alice");
+    personTraditional.greet(); // Output: Hello, undefined (due to 'this' referring to global object)
+
+    const personArrow = new PersonArrow("Bob");
+    personArrow.greet(); // Output: Hello, Bob
+
+    // Example 5: Returning an object literal
+    const createUser = (name, age) => ({
+        name: name,
+        age: age
+    });
+
+    console.log(createUser("Charlie", 30)); 
+    // Output: { name: 'Charlie', age: 30 }
+
+    // Example 6: Filter Function
+    const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const evenNumbers = numbersArray.filter(num => num % 2 === 0);
+    console.log(evenNumbers); 
+    // Output: [2, 4, 6, 8, 10]
+
+    // Example 7: Map Function
+    const doubledNumbers = numbersArray.map(num => num * 2);
+    console.log(doubledNumbers); 
+    // Output: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+    // Example 8: Closure
+    function createCounter() {
+        let count = 0;
+        return function() {
+            count++;
+            return count;
+        };
+    }
+
+    const counter = createCounter();
+    console.log(counter()); // Output: 1
+    console.log(counter()); // Output: 2
+    console.log(counter()); // Output: 3
+
+    // Function to handle click using onClick attribute
+    function handleClickOnClick() {
+        alert('Button clicked using onClick attribute!');
+    }
+
+    // Function to handle click using addEventListener
+    function handleClickEventListener() {
+        alert('Button clicked using addEventListener!');
+    }
+
+    // Attaching event listener to button2
+    const button2 = document.getElementById('button2');
+    button2.addEventListener('click', handleClickEventListener);
+
+    // Demonstrating the difference
+    // If you try to attach another click handler using onClick, it will overwrite the previous one
+    document.getElementById('button1').onclick = function() {
+        alert('This will replace the previous onClick handler!');
+    };
+
+    // If you try to attach another click handler using addEventListener, it will not overwrite the previous one
+    button2.addEventListener('click', function() {
+        alert('This will not replace the previous event listener!');
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM</title>
+</head>
+<body>
+  <!-- Heads or Tails Button Feature -->
+  <button onclick="game('head');" class="js-a">9a (Head)</button>
+  <button onclick="game('tail');" class="js-b">9b (Tail)</button>
+  <p class="js-display"></p>
+
+  <!-- Name Input Feature -->
+  <input id="name-input" type="text" placeholder="Name" />
+  <button onclick="displayUserName()">Submit</button>
+  <p id="display-name"></p>
+
+  <script>
+    // Function to display the chosen head or tail option
+    function game(head_or_tail) {
+      document.querySelector('.js-display').textContent = `You chose: ${head_or_tail}`;
+    }
+
+    // Function to display the user's name in the paragraph
+    function displayUserName() {
+      const nameInput = document.getElementById('name-input').value;
+      document.getElementById('display-name').textContent = `Your Name: ${nameInput}`;
+    }
+
+    // Add event listener to handle the Enter key press for the name input
+    document.getElementById('name-input').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        displayUserName();
+      }
+    });
+  </script>
+</body>
+</html>
